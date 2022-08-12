@@ -1,0 +1,3 @@
+form은 인코딩 설정이 html의 인코딩에 따라 accept하지 않아 
+
+accept-charset="UTF-8" 속성을 설정해야 한다.

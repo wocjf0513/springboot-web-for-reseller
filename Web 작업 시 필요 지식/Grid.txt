@@ -1,0 +1,96 @@
+grid-template-columns: 1fr 1fr;
+grid-template-columns: repeat(auto-fill, minmax(20%, auto)); 	 //자동으로 채우기 비면 빈대로 
+grid-template-columns: repeat(auto-fit, minmax(20%, auto)); 	//자동으로 채우면서 빈게 있으면 비율에 맞게 조정해서 채운다.
+gap: 10px 20px
+(row-gap:10px; column-gap: 20px;)
+
+IE에서는 gap의 대체 속성이 없기 때문에, IE와 구조를 통일하고 싶으면 아예 처음부터 gap을 사용하지 않고 구조를 설계하는게 편해요.
+
+
+	.item:nth-child(1) {
+	grid-column: 1/3;
+	grid-row: 1/2;
+	}	
+
+
+	grid-template-areas:
+		"header header header"
+		"   a    main    b   "
+		"   .     .      .   "
+		"footer footer footer";
+
+	.header { grid-area: header; }
+
+
+세로 방향 정렬(셀 안에서의)
+.container {
+	align-items: stretch;
+	/* align-items: start; */
+	/* align-items: center; */
+	/* align-items: end; */
+}
+
+가로 방향 정렬
+.container {
+	justify-items: stretch;
+	/* justify-items: start; */
+	/* justify-items: center; */
+	/* justify-items: end; */
+}
+
+아이템 그룹 세로 정렬(셀 내 아이템을 그룹화해서 정렬)
+.container {
+	align-content: stretch;
+	/* align-content: start; */
+	/* align-content: center; */
+	/* align-content: end; */
+	/* align-content: space-between; */
+	/* align-content: space-around; */
+	/* align-content: space-evenly; */
+}
+
+.container {
+	justify-content: stretch;
+	/* justify-content: start; */
+	/* justify-content: center; */
+	/* justify-content: end; */
+	/* justify-content: space-between; */
+	/* justify-content: space-around; */
+	/* justify-content: space-evenly; */
+}
+
+개별 아이템 정렬
+.item {
+	align-self: stretch;
+	/* align-self: start; */
+	/* align-self: center; */
+	/* align-self: end; */
+}
+.item {
+	justify-self: stretch;
+	/* justify-self: start; */
+	/* justify-self: center; */
+	/* justify-self: end; */
+
+
+
+.head(container){
+		position: relative;
+	}
+	.head_text{
+		position: absolute;
+		top:5%;
+		left:50%;
+	}
+setInterval(function(){
+		if(document.getElementById("main_text1").style.color=='black')
+			document.getElementById("main_text1").style.color="red"
+		else
+			document.getElementById("main_text1").style.color="black"
+		if(document.getElementById("main_text2").style.color=='black')
+			document.getElementById("main_text2").style.color="red"
+		else
+			document.getElementById("main_text2").style.color="black"
+	}, 500);
+
+transform: translate( -50%, -50% );

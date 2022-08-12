@@ -1,0 +1,121 @@
+<script>
+$(function() {
+	$('#checkJson').on('click', () => {
+		const jsonInfo = '{"name":"루루","age":25,"nick":"이땅콩"}';
+		$.ajax({
+			type:'post',
+			url:'/jsonServlet2',
+			success:function (data, textStatus) {
+				console.log('data')
+				console.log(data)
+				const jsonInfo = JSON.parse(data)
+				let memberInfo = '회원 정보 <hr>'
+				
+				for(const i in jsonInfo.members) {
+					memberInfo += '이름 : ' + jsonInfo.members[i].name + '<br>'
+					memberInfo += '나이 : ' + jsonInfo.members[i].age + '<br>'
+					memberInfo += '별명 : ' + jsonInfo.members[i].nick + '<hr>'
+					
+					$('#output').html(memberInfo)
+				}
+			},
+			error : function(data,textStatus) {
+				console.log('error!!')
+			}
+		}) //ajax
+	}) //checkJson
+})
+</script>
+...
+
+Json 데이터 변환 
+var jsonText = '{"member":[{"id":"hyunc87","blog":"tistory","from":"korea","memo":"HelloWorld"},{"id":"abcd","blog":"tistory.com","from":"korea","memo":"HelloWorld2"}]}';
+		var o = JSON.parse(jsonText);
+
+		document.getElementById('a').innerHTML = o.member[0].id + '.' + o.member[0].blog;
+		document.getElementById('b').innerHTML = o.member[1].id + '.' + o.member[0].blog;
+
+
+JSON.stringify(o)      , object -> string
+
+
+
+
+JSON 서버 응답
+
+<p id="timezones"></p>
+<input type="button" id="execute" value="execute" />
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './time2.php');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var _tzs = xhr.responseText;
+            var tzs = JSON.parse(_tzs);
+            var _str = '';
+            for(var i = 0; i< tzs.length; i++){
+                _str += '<li>'+tzs[i]+'</li>';
+            }
+            _str = '<ul>'+_str+'</ul>';
+            document.querySelector('#timezones').innerHTML = _str;
+        }
+    }
+    xhr.send(); 
+}); 
+</script> 
+
+
+JSON 서버 전송 
+<p>time : <span id="time"></span></p>
+<select id="timezone">
+    <option value="Asia/Seoul">asia/seoul</option>
+    <option value="America/New_York">America/New_York</option>
+</select>
+<select id="format">
+    <option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+    <option value="Y-m-d">Y-m-d</option>
+</select>
+<input type="button" id="execute" value="execute" />
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', './time3.php');
+    xhr.onreadystatechange = function(){
+        document.querySelector('#time').innerHTML = xhr.responseText;
+    }
+    var data = new Object();
+    data.timezone = document.getElementById('timezone').value;
+    data.format = document.getElementById('format').value;
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data)); 
+});
+</script>
+
+
+	var send_ssn='{"ssn": "' + send_msg + '", "companyname" : "'+comp_nm+ '" }';
+		
+				   $.ajax({
+						type: 'POST',
+						url: '/auth/order/validate',
+						dataType:'json',
+						contentType: 'application/json',
+						data: send_ssn,
+						success: function (data){
+							var jsonInfo=data;
+							
+							if(jsonInfo.comp_nm==null){
+								$(id).siblings("#input_notice").replaceWith("<label id=\"input_notice\" class=\"input_notice\" onclick=reason_valid(this); for=\"input_licn3\" style=\"font-weight:bold\" >Valid</label>");
+							}
+							else{
+								$(id).siblings("#inform_text").val("<Message>"+jsonInfo.message+"</Message>  <CompanyName>"+jsonInfo.comp_nm+"</CompanyName>  <EndDate>"+jsonInfo.endDate+"</EndDate>");
+								$(id).siblings("#input_notice").replaceWith("<label id=\"input_notice\" class=\"input_notice\" onclick=reason_valid(this); for=\"input_licn3\" style=\"font-weight:bold\" >Invalid</label>");
+							}
+						},
+						complete: function() {
+						},
+						error:function(request, status, error){
+							//alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+						}			
+					});

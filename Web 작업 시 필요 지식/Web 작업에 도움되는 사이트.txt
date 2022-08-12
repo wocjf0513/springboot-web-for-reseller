@@ -1,0 +1,12 @@
+[심재철] [오전 10:18] http://webjangi.com/  -웹 템플릿
+[심재철] [오후 5:48] https://animate.style/#best-practices  - 애니메이션
+[심재철] [오전 10:26] https://pixlr.com/kr/editor/  - 포토샵
+[심재철] [오전 11:35] https://velog.io/@jun7867/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8F%84%EC%99%80%EC%A4%84-%EA%BF%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%B6%94%EC%B2%9C - 종합 추천 링크
+[심재철] [오후 4:24] https://studiomeal.com/archives/533 - 그리드
+PIXBAY - 웹 페이지 이미지
+
+https://datatables.net/ - table작업 시
+
+backend 작업시 
+
+https://devpad.tistory.com/19?category=773041 - spring에 대한 정보
