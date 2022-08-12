@@ -1,6 +1,6 @@
-#  WebProject for Reseller
+#  :blush: Web for Reseller
 
-## 짧은 소개
+### 짧은 소개
     회사 SolidIT에서의 Solid Works 사용을 위한 License 제공은 
     Service Developer –> Service Reseller –> Service Consumer 
     위와 같은 순서로 이루어진다. 
