@@ -31,7 +31,7 @@
 
 ## 🗣 프로젝트 관련 PPT
 
-[백엔드 관련 정리](./Backend/smallweb 서버 정리.pptx)
+[백엔드 관련 정리](./Backend/smallweb_서버정리.pptx)
 
 [프론트 사용자 페이지 관련 정리](./Frontend/SolidWorks_Reseller_Web_Project_심재철.pptx)
 
