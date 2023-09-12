@@ -14,7 +14,7 @@
 ## 🖥 인터페이스
 
 <details>   <summary>사용자 페이지</summary> 
-<img src="./resources/interface.jpg"
+<img src="./resources/interface.jpg">
 </details>
 
 <details>   <summary>관리자 페이지</summary> 
